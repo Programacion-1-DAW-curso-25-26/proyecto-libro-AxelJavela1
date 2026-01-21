@@ -19,7 +19,7 @@ public class Main {
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+            sc.nextLine();
 
             switch (opcion) {
                 case 1 -> añadirLibro();
@@ -63,13 +63,9 @@ public class Main {
 
 
     static void mostrarLibros() {
-        if (listaLibros.isEmpty()) {
-            System.out.println("La lista está vacía.");
-        } else {
-            for (Libro libro : listaLibros) {
-                libro.mostarInfo();
-                System.out.println("-------------------");
-            }
+        for (Libro libro : listaLibros) {
+            libro.mostarInfo();
+            System.out.println("-------------------");
         }
     }
 
